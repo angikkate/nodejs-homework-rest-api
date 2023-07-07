@@ -1,6 +1,6 @@
 const fs = require('fs/promises')
 const path = require('path');
-const { nanoid } = require('nanoid'); console.log(__dirname);
+const { nanoid } = require('nanoid');
 const contactsPath = path.join(__dirname, 'contacts.json');
 
 const listContacts = async () => {
@@ -17,7 +17,6 @@ const getContactById = async (contactId) => {
 const removeContact = async (contactId) => {
   const contacts = await listContacts();
   const index = contacts.findIndex(list => list.id === contactId);
-  console.log(index);
   if(index === -1){
       return null;
   }
