@@ -23,7 +23,14 @@ const userSchema = new Schema({
     enum: subscriptionList,
     default: 'starter'
   },
-  token: String
+  token: {
+    type: String,
+    default: ''
+  },
+  avatarURL: {
+    type: String,
+    required: true,
+  }
 }, {versionKey: false, timestaps: true})
 
 userSchema.post('save', handleMongooseError)
